@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    history page
+{% endblock %}
+
+{% block main %}
+  <h1>{{ un }} transaction history</h1>
+  <html>
+<head>
+<style>
+table, th, td {
+border: 1px solid;
+}
+table {
+width: 50%;
+}
+td {
+text-align: center;
+}
+tr:hover {background-color: coral;}
+tr:nth-child(even) {background-color: #f2f2f2;}
+th {
+background-color: #04AA6D;
+color: white;
+}
+table.center {
+margin-left: auto;
+margin-right: auto;
+}
+</style>
+</head>
+<body>
+  <table class="center">
+    <thead>
+      <tr>
+        <th>Sharename</th>
+        <th>Noofshare</th>
+        <th>Price($)</th>
+        <th>Bought(B)/Sold(S)</th>
+        <th>DatenTime</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for info in infos %}
+      <tr>
+        <td>{{ info[0] }}</td>
+        <td>{{ info[1] }}</td>
+        <td>{{ info[2] }}</td>
+        <td>{{ info[3] }}</td>
+        <td>{{ info[4] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

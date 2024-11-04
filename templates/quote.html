@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote Page
+{% endblock %}
+
+{% block main %}
+  <h1>Share Details</h1>
+  <html>
+<head>
+<style>
+table, th, td {
+border: 1px solid;
+}
+table {
+width: 50%;
+}
+td {
+text-align: center;
+}
+tr:hover {background-color: coral;}
+tr:nth-child(even) {background-color: #f2f2f2;}
+th {
+background-color: #04AA6D;
+color: white;
+}
+table.center {
+margin-left: auto;
+margin-right: auto;
+}
+table{
+width: calc(50% - 10px);
+margin: 15px;
+}
+</style>
+</head>
+<body>
+  <table class="center">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price($)</th>
+        <th>Symbol</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ lk['name'] }}</td>
+        <td>{{ lk['price'] }}</td>
+        <td>{{ lk['symbol'] }}</td>
+      </tr>
+    </tbody>
+  </table>
+{% endblock %}

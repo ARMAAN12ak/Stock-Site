@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block main %}
+  <h1>{{ un }} details</h1>
+<html>
+<head>
+<style>
+table, th, td {
+border: 1px solid;
+}
+table {
+width: 50%;
+}
+td {
+text-align: center;
+}
+tr:hover {background-color: coral;}
+tr:nth-child(even) {background-color: #f2f2f2;}
+th {
+background-color: #04AA6D;
+color: white;
+}
+table.center {
+margin-left: auto;
+margin-right: auto;
+}
+table{
+width: calc(50% - 10px);
+margin: 15px;
+}
+</style>
+</head>
+<body>
+  <table class="center">
+    <thead>
+      <tr>
+        <th>Sharename</th>
+        <th>Noofshare</th>
+        <th>Currentprice($)</th>
+        <th>TotalValue($)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for share in shares %}
+      <tr>
+        <td>{{ share[0] }}</td>
+        <td>{{ share[1] }}</td>
+        <td>{{ share[2] }}</td>
+        <td>{{ share[3] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <table class="center">
+    <thead>
+      <tr>
+        <th>Current Cash($)</th>
+        <th>Cash Total Value($)</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>{{ curcsh }}</td>
+      <td>{{ p }}</td>
+      </tr>
+      </tbody>
+  </table>
+{% endblock %}
+
+
